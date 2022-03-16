@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import HeaderComponent from "../components/commom/headercomponent";
+import { createGlobalStyle } from 'styled-components'
+import HeaderComponent from '../components/commom/headercomponent'
 // sections
 
 const GlobalStyle = createGlobalStyle`
@@ -15,13 +15,12 @@ const GlobalStyle = createGlobalStyle`
 		color: inherit;
 		text-decoration: none;
 	}
-`;
-
+`
 export default function Home() {
 	return (
 		<div>
 			<GlobalStyle />
 			<HeaderComponent />
 		</div>
-	);
+	)
 }
