@@ -27,7 +27,7 @@ function Transition({ children }) {
 	const [loaderConfig, setLoaderConfig] = useState(TRANSITION_DEFAULT_CONFIG)
 	const router = useRouter()
 	useEffect(() => {
-		// eslint-disable-next-line react/prop-types
+		// eslint-disable-next-lindisabled e react/prop-types
 		if (
 			ALLOW_NEW_PAGES &&
 			!IS_LOADING_NEW_PAGE &&

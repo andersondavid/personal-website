@@ -1,25 +1,11 @@
 import Head from 'next/head'
-import styled, { createGlobalStyle } from 'styled-components'
-
+import styled, { ThemeProvider } from 'styled-components'
+import GlobalStyle from '../styles/global'
+import theme from '../styles/theme'
 import Header from '../components/commom/header'
 import SideBar from '../components/commom/sidebar'
 import Transition from './_transition'
 
-const GlobalStyle = createGlobalStyle`
-	body {
-		background: #111115;
-		font-family: 'Raleway', sans-serif;
-	}
-	* {
-		padding: 0;
-		margin: 0;
-		box-sizing: border-box;
-	}
-	a {
-		color: inherit;
-		text-decoration: none;
-	}
-`
 
 const MainWrapper = styled.div`
 	display: grid;
@@ -27,6 +13,11 @@ const MainWrapper = styled.div`
 	grid-template-rows: 65px auto;
 	height: 100vh;
 	overflow: hidden;
+	transition: 0.5s;
+	@media (max-width: 500px){
+		grid-template-columns: auto;
+		grid-template-rows: 65px auto 65px;
+	}
 `
 const Main = styled.main`
 	width: 100%;
@@ -39,19 +30,21 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<>
-			<Head>
-				<title>My new cool app</title>
-			</Head>
-			<GlobalStyle />
-			<MainWrapper>
-				<Header />
-				<SideBar />
-				<Main>
-					<Transition>
-						<Component {...pageProps} />
-					</Transition>
-				</Main>
-			</MainWrapper>
+			<ThemeProvider theme={theme}>
+				<Head>
+					<title>Anderson David SF | WebDesigner</title>
+				</Head>
+				<GlobalStyle />
+				<MainWrapper>
+					<Header />
+					<SideBar />
+					<Main>
+						<Transition>
+							<Component {...pageProps} />
+						</Transition>
+					</Main>
+				</MainWrapper>
+			</ThemeProvider>
 		</>
 	)
 }
