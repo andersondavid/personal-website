@@ -19,7 +19,6 @@ const PageLoader = styled.div`
 	position: absolute;
 	right: ${(props) => props.loaderConfig.pageLoaderPos};
 	transition: ${(props) => props.loaderConfig.transitionTime};
-	background: green;
 `
 // eslint-disable-next-line react/prop-types
 function Transition({ children }) {
@@ -28,7 +27,6 @@ function Transition({ children }) {
 	const [loaderConfig, setLoaderConfig] = useState(TRANSITION_DEFAULT_CONFIG)
 	const router = useRouter()
 	useEffect(() => {
-		console.log(router.pathname)
 		// eslint-disable-next-line react/prop-types
 		if (
 			ALLOW_NEW_PAGES &&
@@ -52,6 +50,7 @@ function Transition({ children }) {
 	const changeCurrentPage = () => {
 		setCurrentPage(children)
 		setNextPage(null)
+		children = null
 		IS_LOADING_NEW_PAGE = false
 		setLoaderConfig(TRANSITION_DEFAULT_CONFIG)
 	}
