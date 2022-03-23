@@ -13,8 +13,8 @@ const TRANSITION_DEFAULT_CONFIG = {
 }
 
 const PageLoader = styled.div`
-	height: 100%;
 	width: 100%;
+	height: 100%;
 	top: 0;
 	position: absolute;
 	right: ${(props) => props.loaderConfig.pageLoaderPos};
@@ -45,7 +45,7 @@ function Transition({ children }) {
 		}
 
 		CURRENT_PATH = router.pathname
-	}, [children])
+	}, [router.pathname, children])
 
 	const changeCurrentPage = () => {
 		setCurrentPage(children)
