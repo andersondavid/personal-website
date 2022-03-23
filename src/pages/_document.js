@@ -27,6 +27,7 @@ export default class MyDocument extends Document {
 					<link rel="icon" href="/favicon.ico" /><link rel="preconnect" href="https://fonts.googleapis.com" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true' />
 					<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+					<meta name="theme-color" content="#222f3e"></meta>
 				</Head>
 				<body>
 					<Main />
