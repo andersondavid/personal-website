@@ -10,19 +10,11 @@ const HeaderTag = styled.header`
 	display: flex;
 	justify-content: space-between;
 	z-index: 1000;
-	position: relative;
+	border-bottom: 1px solid ${(props) => props.theme.lines};
 	grid-column-start: 1;
 	grid-column-end: 2;
 	grid-row-start: 1;
 	grid-row-end: 1;
-	&::before {
-		content: '';
-		height: 1px;
-		width: 100%;
-		background: ${props => props.theme.lines};
-		position: absolute;
-		bottom: 0;
-	}
 	@media (max-width: 500px) {
 		grid-column-start: 1;
 		grid-column-end: 1;
@@ -50,37 +42,36 @@ const NavBar = styled.nav`
 	transition: 0.3s;
 	@media (max-width: 500px) {
 		position: absolute;
-		top: ${props => props.linksOpen ? '64px' : '-220px'};
+		top: ${(props) => (props.linksOpen ? '64px' : '-220px')};
 		right: 0;
+	}
 `
 
 const SocialLinksList = styled.ul`
 	list-style: none;
 	display: inline-block;
-	background: ${props => props.theme.bg};
 	@media (max-width: 500px) {
-		border: solid 1px ${props => props.theme.lines};
-		background: ${props => props.theme.bg};
+		border: solid 1px ${(props) => props.theme.lines};
+		background: ${(props) => props.theme.bg};
 		display: block;
 	}
 	li {
 		height: 65px;
 		transition: 0.3s;
 		text-transform: uppercase;
-		font-family: 'Raleway',sans-serif;
 		display: inherit;
 	}
 	a {
-		color: ${props => props.theme.textPrimary};
+		color: ${(props) => props.theme.textPrimary};
 		text-decoration: none;
 		line-height: 65px;
 		padding: 15px;
 		margin-right: 15px;
 	}
 	li:hover {
-		background-color: ${props => props.theme.bgLight};
+		background-color: ${(props) => props.theme.bgLight};
 	}
-	`
+`
 
 export default function Header() {
 	const [linksOpen, setLinksOpen] = useState(false)
@@ -88,23 +79,25 @@ export default function Header() {
 	return (
 		<HeaderTag>
 			<LogoContainer>
-				<HeaderIcons src={logo} height='32px' width='32px' />
+				<HeaderIcons src={logo} height="32px" width="32px" />
 			</LogoContainer>
-			<MenuBtnContainer onClick={() => setLinksOpen(!linksOpen)} >
-				<HeaderIcons src={menuBtn} height='32px' width='32px' />
+			<MenuBtnContainer onClick={() => setLinksOpen(!linksOpen)}>
+				<HeaderIcons src={menuBtn} height="32px" width="32px" />
 			</MenuBtnContainer>
 			<NavBar linksOpen={linksOpen}>
 				<SocialLinksList>
 					<li>
-						<a href='//github.com/andersondavid'>github</a>
+						<a href="//github.com/andersondavid">github</a>
 					</li>
-					
+
 					<li>
-						<a href='//www.linkedin.com/in/anderson-david-349b18187'>linkedin</a>
+						<a href="//www.linkedin.com/in/anderson-david-349b18187">
+							linkedin
+						</a>
 					</li>
-					
+
 					<li>
-						<a href='//pinterest.com/ndersondavid/'>pinterest</a>
+						<a href="//pinterest.com/ndersondavid/">pinterest</a>
 					</li>
 				</SocialLinksList>
 			</NavBar>

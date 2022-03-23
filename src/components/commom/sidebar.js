@@ -14,24 +14,15 @@ const Aside = styled.aside`
 	grid-row-start: 1;
 	grid-row-end: 3;
 	position: relative;
-	&::after {
-		top: 0;
-		left: 0;
-		position: absolute;
-		height: 100%;
-		width: 1px;
-		content: '';
-		background: ${props => props.theme.lines};
-	}
+	border: solid ${(props) => props.theme.lines} 0;
+	border-left: solid #576574 1px;
 	@media (max-width: 500px) {
 		grid-column-start: 1;
 		grid-column-end: 1;
 		grid-row-start: 3;
 		grid-row-end: 3;
-		&::after {
-			height: 1px;
-			width: 100%;
-		}
+		border-top: solid #576574 1px;
+		border-left: none;
 	}
 `
 
@@ -42,7 +33,7 @@ const PagesLinksList = styled.ul`
 	height: 100%;
 	justify-content: center;
 	align-items: center;
-	@media (max-width: 500px){
+	@media (max-width: 500px) {
 		flex-direction: row;
 		justify-content: space-evenly;
 	}
@@ -56,14 +47,14 @@ const PagesLinksItems = styled.li`
 	height: 52px;
 	width: 52px;
 	transition: 0.3s;
-	background: ${props => props.isActive ? props.theme.bgLight : 'initial'};
+	background: ${(props) => (props.isActive ? props.theme.bgLight : 'initial')};
 	a {
-		pointer-events: ${props => props.isActive ? 'none' : 'auto'};
+		pointer-events: ${(props) => (props.isActive ? 'none' : 'auto')};
 	}
 	&:hover {
-		background: ${props => props.theme.bgLight};
+		background: ${(props) => props.theme.bgLight};
 	}
-	@media (max-width: 500px){
+	@media (max-width: 500px) {
 		height: 42px;
 		width: 42px;
 	}
@@ -71,45 +62,43 @@ const PagesLinksItems = styled.li`
 
 export default function SideBar() {
 	const router = useRouter()
-	
+
 	const isActive = (href) => href === router.pathname
 
 	return (
 		<Aside>
 			<PagesLinksList>
-
 				<PagesLinksItems isActive={isActive('/')}>
-					<Link href='/' >
+					<Link href="/">
 						<a>
-							<Image src={home} />
+							<Image src={home} alt="" />
 						</a>
 					</Link>
 				</PagesLinksItems>
 
 				<PagesLinksItems isActive={isActive('/github')}>
-					<Link href='/github'>
-						<a disable='true' >
-							<Image src={github} />
+					<Link href="/github">
+						<a disable="true">
+							<Image src={github} alt="" />
 						</a>
 					</Link>
 				</PagesLinksItems>
 
 				<PagesLinksItems isActive={isActive('/aboutme')}>
-					<Link href='/aboutme'>
+					<Link href="/aboutme">
 						<a>
-							<Image src={person} />
-						</a>	
-					</Link>
-				</PagesLinksItems>
-
-				<PagesLinksItems isActive={isActive('/thissite')}>
-					<Link href='/thissite'>
-						<a>
-							<Image src={code} />
+							<Image src={person} alt="" />
 						</a>
 					</Link>
 				</PagesLinksItems>
 
+				<PagesLinksItems isActive={isActive('/thissite')}>
+					<Link href="/thissite">
+						<a>
+							<Image src={code} alt="" />
+						</a>
+					</Link>
+				</PagesLinksItems>
 			</PagesLinksList>
 		</Aside>
 	)
