@@ -143,7 +143,7 @@ export default function About() {
 				<HalfArticle>
 					<SecondTitle>Extras e Diferenciais</SecondTitle>
 					<ExtraText>
-						<ExtraItem>Ingês basico</ExtraItem>
+						<ExtraItem>Inglês basico</ExtraItem>
 						<ExtraItem>Design gráfico</ExtraItem>
 						<ExtraItem>Experiencia basica com SQL</ExtraItem>
 						<ExtraItem>Experiencia basica com NoSQL (MongoDB)</ExtraItem>
