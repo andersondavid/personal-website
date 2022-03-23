@@ -7,13 +7,15 @@
 	"extends": [
 		"eslint:recommended",
 		"plugin:react/recommended",
-		"plugin:react/jsx-runtime"
+		"plugin:react/jsx-runtime",
+		"plugin:@next/next/recommended",
+		"eslint:recommended", "next"
 	],
 	"parserOptions": {
 		"ecmaFeatures": {
 			"jsx": true
 		},
-		"ecmaVersion": "latest",
+		"ecmaVersion": "12",
 		"sourceType": "module"
 	},
 	"plugins": [
