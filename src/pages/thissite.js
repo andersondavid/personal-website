@@ -164,7 +164,7 @@ export default function Site() {
 						</DependenciesList>
 					</div>
 					<div>
-						<SecondTitle>Dependencias de Desinvolvimento</SecondTitle>
+						<SecondTitle>Dependencias de Desenvolvimento</SecondTitle>
 						<DependenciesList>
 							&#123;
 							<Dependency>

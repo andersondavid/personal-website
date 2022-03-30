@@ -14,14 +14,13 @@ const Aside = styled.aside`
 	grid-row-start: 1;
 	grid-row-end: 3;
 	position: relative;
-	border: solid ${(props) => props.theme.lines} 0;
-	border-left: solid #576574 1px;
+	border-left: solid ${(props) => props.theme.lines} 1px;
 	@media (max-width: 500px) {
 		grid-column-start: 1;
 		grid-column-end: 1;
 		grid-row-start: 3;
 		grid-row-end: 3;
-		border-top: solid #576574 1px;
+		border-top: solid ${(props) => props.theme.lines} 1px;
 		border-left: none;
 	}
 `

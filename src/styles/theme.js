@@ -1,6 +1,6 @@
 const	colors = {
 	gray: '#576574',
-	grayDark: '#222f3e',
+	grayDark: '#111122',
 	white: '#c8d6e5',
 	whiteDark: '#8395a7',
 	green: '#1dd1a1',
@@ -23,8 +23,8 @@ const theme = {
 	textPrimary: colors.white,
 	textSecondary: colors.whiteDark,
 	fontGlobal: 'Roboto, sans-serif',
-	fontHeaders: 'Bebas Neue, cursive',
-	lines: colors.gray,
+	fontHeaders: 'Righteous',
+	lines: colors.grayDark,
 	colors
 }
 
