@@ -20,7 +20,7 @@ const Article = styled.article`
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	@media (min-width: 500px) {
+	@media (min-width: 800px) {
 		right: 10%;
 		width: 40%;
 	}
@@ -41,11 +41,24 @@ const JobsText = styled.p`
 	}
 `
 
+const MyName = styled.h2`
+	font-size: 2em;
+	font-family: ${(props) => props.theme.fontHeaders};
+	width: 100%;
+	margin: 0 15px;
+	@media (min-width: 800px) {
+		top: 40%;
+		position: absolute;
+		left: -100%;
+	}
+`
+
 export default function Home() {
 	return (
 		<Page>
 			<Section>
 				<Article>
+					<MyName>Anderson David SF</MyName>
 					<BigTitle />
 					<JobsText>
 						<span>Fronted</span>
