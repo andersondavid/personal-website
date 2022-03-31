@@ -85,7 +85,7 @@ const RepoItem = styled.li`
 	}
 `
 const RepoBox = styled.div`
-	border: 1px solid ${(props) => props.theme.lines};
+	border: 1px solid ${(props) => props.theme.bgLight};
 	border-radius: 5px;
 	width: 100%;
 	padding: 10px 8px;
@@ -148,7 +148,7 @@ export default function Github({ githubData }) {
 	)
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const githubData = await fetchGithub()
 	return { props: { githubData } }
 }

@@ -11,7 +11,7 @@ const Title = styled.h1`
 `
 
 function BigTitle() {
-	return <Title>Hello, Im Desiger.</Title>
+	return <Title>Hello, Im Designer.</Title>
 }
 
 export default BigTitle

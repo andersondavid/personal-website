@@ -93,13 +93,60 @@ const BigIcon = styled.div`
 		display: none;
 	}
 `
+const Bubbles = styled.div`
+	text-align: center;
+	max-width: 700px;
+	margin: 2em auto;
+`
+
+const Bubble = styled.div`
+	display: inline-block;
+	padding: 8px;
+	margin: 5px;
+	border-radius: 15px;
+	color: ${props => props.theme.bg};
+	font-weight: bold;
+	background: ${(props) => props.theme.colors.green};
+
+`
 
 export default function About() {
+
+	const competeneces = [
+		'Axios',
+		'Next.js',
+		'ReactJS',
+		'NodeJS',
+		'HTML5',
+		'CSS',
+		'JavaScript',
+		'JSON',
+		'Styled-Componentes',
+		'CSS',
+		'Redux',
+		'React Router',
+		'Next Router',
+		'SVG',
+		'Firebase',
+		'Rest API',
+		'GraphQL',
+		'SocketIO',
+		'ES6',
+		'CSS Grid',
+		'Flexbox'
+	]
+
+	const competencesList = competeneces.map((item) =>
+		<Bubble key={item}>{item}</Bubble>
+	)
 	return (
 		<Page>
 			<Section>
 				<Article>
 					<Title>Habilidades</Title>
+					<Bubbles>
+						{competencesList}
+					</Bubbles>
 					<SkillList>
 						<Skill>
 							<h3>Web Development</h3>
